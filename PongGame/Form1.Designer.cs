@@ -48,23 +48,25 @@
             // 
             // pbBall
             // 
-            pbBall.Image = Properties.Resources.Ball_removebg_preview;
-            pbBall.Location = new Point(288, 196);
+            pbBall.BackColor = Color.Transparent;
+            pbBall.Image = Properties.Resources.MT;
+            pbBall.Location = new Point(562, 256);
             pbBall.Margin = new Padding(3, 4, 3, 4);
             pbBall.Name = "pbBall";
-            pbBall.Size = new Size(89, 90);
-            pbBall.SizeMode = PictureBoxSizeMode.Zoom;
+            pbBall.Size = new Size(84, 81);
+            pbBall.SizeMode = PictureBoxSizeMode.StretchImage;
             pbBall.TabIndex = 0;
             pbBall.TabStop = false;
             pbBall.Click += pbBall_Click;
             // 
             // pbPlayer1
             // 
-            pbPlayer1.Image = Properties.Resources.player1_removebg_preview;
-            pbPlayer1.Location = new Point(12, 13);
+            pbPlayer1.BackColor = Color.Transparent;
+            pbPlayer1.Image = Properties.Resources.player1_right3;
+            pbPlayer1.Location = new Point(543, 256);
             pbPlayer1.Margin = new Padding(3, 4, 3, 4);
             pbPlayer1.Name = "pbPlayer1";
-            pbPlayer1.Size = new Size(82, 159);
+            pbPlayer1.Size = new Size(113, 144);
             pbPlayer1.SizeMode = PictureBoxSizeMode.Zoom;
             pbPlayer1.TabIndex = 1;
             pbPlayer1.TabStop = false;
@@ -72,11 +74,12 @@
             // 
             // pbPlayer2
             // 
-            pbPlayer2.Image = Properties.Resources.player2_removebg_preview;
-            pbPlayer2.Location = new Point(111, 13);
+            pbPlayer2.BackColor = Color.Transparent;
+            pbPlayer2.Image = Properties.Resources.player2_left3;
+            pbPlayer2.Location = new Point(411, 32);
             pbPlayer2.Margin = new Padding(3, 4, 3, 4);
             pbPlayer2.Name = "pbPlayer2";
-            pbPlayer2.Size = new Size(89, 159);
+            pbPlayer2.Size = new Size(113, 145);
             pbPlayer2.SizeMode = PictureBoxSizeMode.Zoom;
             pbPlayer2.TabIndex = 2;
             pbPlayer2.TabStop = false;
@@ -84,35 +87,43 @@
             // 
             // TimerPongGame
             // 
+            TimerPongGame.Interval = 1000;
             TimerPongGame.Tick += TimerPongGame_Tick;
             // 
             // pbGoal2
             // 
-            pbGoal2.BackColor = SystemColors.MenuHighlight;
-            pbGoal2.BackgroundImage = (Image)resources.GetObject("pbGoal2.BackgroundImage");
-            pbGoal2.Location = new Point(671, 23);
+            pbGoal2.BackColor = Color.Transparent;
+            pbGoal2.BackgroundImage = Properties.Resources.spaceship21;
+            pbGoal2.BackgroundImageLayout = ImageLayout.Stretch;
+            pbGoal2.Location = new Point(184, 12);
             pbGoal2.Name = "pbGoal2";
-            pbGoal2.Size = new Size(50, 10);
+            pbGoal2.Size = new Size(124, 273);
             pbGoal2.TabIndex = 3;
             pbGoal2.TabStop = false;
             pbGoal2.Click += pbGoal2_Click;
             // 
             // pbGoal1
             // 
-            pbGoal1.BackgroundImage = Properties.Resources.KhungThanh;
-            pbGoal1.Location = new Point(532, 23);
+            pbGoal1.BackColor = Color.Transparent;
+            pbGoal1.BackgroundImage = Properties.Resources.spaceship1;
+            pbGoal1.BackgroundImageLayout = ImageLayout.Stretch;
+            pbGoal1.ErrorImage = (Image)resources.GetObject("pbGoal1.ErrorImage");
+            pbGoal1.Location = new Point(25, 12);
             pbGoal1.Name = "pbGoal1";
-            pbGoal1.Size = new Size(53, 10);
+            pbGoal1.Size = new Size(122, 273);
             pbGoal1.TabIndex = 4;
             pbGoal1.TabStop = false;
             pbGoal1.Click += pbGoal1_Click;
             // 
             // btnStart
             // 
-            btnStart.BackColor = SystemColors.WindowFrame;
-            btnStart.Location = new Point(12, 196);
+            btnStart.AutoSize = true;
+            btnStart.BackColor = Color.Tomato;
+            btnStart.BackgroundImageLayout = ImageLayout.Stretch;
+            btnStart.Font = new Font("Perpetua", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnStart.Location = new Point(517, 418);
             btnStart.Name = "btnStart";
-            btnStart.Size = new Size(200, 100);
+            btnStart.Size = new Size(184, 78);
             btnStart.TabIndex = 5;
             btnStart.Text = "Bắt Đầu Chơi";
             btnStart.UseVisualStyleBackColor = false;
@@ -121,10 +132,10 @@
             // pbReferee
             // 
             pbReferee.BackColor = Color.Transparent;
-            pbReferee.Image = Properties.Resources.TrongTai_removebg_preview;
-            pbReferee.Location = new Point(251, 2);
+            pbReferee.Image = Properties.Resources.batman;
+            pbReferee.Location = new Point(530, -1);
             pbReferee.Name = "pbReferee";
-            pbReferee.Size = new Size(173, 159);
+            pbReferee.Size = new Size(171, 235);
             pbReferee.SizeMode = PictureBoxSizeMode.Zoom;
             pbReferee.TabIndex = 6;
             pbReferee.TabStop = false;
@@ -133,7 +144,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
+            BackColor = SystemColors.Desktop;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1343, 530);
             Controls.Add(pbReferee);
@@ -143,9 +154,13 @@
             Controls.Add(pbPlayer2);
             Controls.Add(pbPlayer1);
             Controls.Add(pbBall);
+            DoubleBuffered = true;
+            ForeColor = SystemColors.ActiveCaptionText;
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
-            Text = "wd";
+            StartPosition = FormStartPosition.WindowsDefaultBounds;
+            Text = "A";
+            WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pbBall).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbPlayer1).EndInit();
@@ -154,6 +169,7 @@
             ((System.ComponentModel.ISupportInitialize)pbGoal1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbReferee).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
